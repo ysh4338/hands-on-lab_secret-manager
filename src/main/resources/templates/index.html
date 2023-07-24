@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurora Connection Test</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            text-align: center;
+            background-color: #f7f7f7;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #fff4c9;
+            color: #363535;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Main Styles */
+        
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-top: 30px;
+            margin-bottom: 30px;
+            margin-left: 30px;
+            margin-right: 30px;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        div.pictures {
+            display: inline-block;
+            width: 400px;
+            padding: 20px;
+            margin-right: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        div.pictures img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        div.pictures h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        div.pictures p {
+            color: #666;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Aurora Connection Test</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Database Picture List</h2>
+            <div class="pictures" th:each="picture : ${pictures}">
+                <img th:src="${picture.image}" alt="Image">
+                <h3 th:text="${picture.name}">Picture_Name</h3>
+                <p th:text="${picture.description}">Description Picture</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; Aurora Connection Test.</p>
+    </footer>
+</body>
+</html>
